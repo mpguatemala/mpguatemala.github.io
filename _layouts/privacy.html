@@ -66,28 +66,6 @@
       margin: 0 auto;
     }
 
-    .brand-row {
-      display: flex;
-      flex-direction: column;
-      align-items: flex-start;
-      gap: 0.7rem;
-      margin-bottom: 1.5rem;
-    }
-
-    .emblem {
-      display: block;
-      height: clamp(104px, 22vw, 152px);
-      width: auto;
-      max-width: min(280px, 100%);
-      object-fit: contain;
-    }
-
-    .brand-sub {
-      margin: 0;
-      font-size: 0.88rem;
-      color: var(--gold-400);
-    }
-
     .masthead h1 {
       margin: 0 0 0.45rem;
       font-family: Fraunces, Georgia, serif;
@@ -226,10 +204,6 @@
 <body>
   <header class="masthead">
     <div class="masthead-inner">
-      <div class="brand-row">
-        <img class="emblem" src="{{ '/assets/mp_logo_silver_nobg.png' | relative_url }}" alt="Ministerio Público de Guatemala">
-        <p class="brand-sub">Departamento Informático Fiscal y Técnico</p>
-      </div>
       <h1>{{ page.heading | default: page.title }}</h1>
       {% if page.updated %}
       <p class="updated">Última actualización: {{ page.updated }}</p>
