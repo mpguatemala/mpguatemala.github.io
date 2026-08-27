@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: "Política de Privacidad" }}</title>
+  <meta name="description" content="{{ page.description | default: 'Política de privacidad y términos de uso.' }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ink: #15232b;
+      --muted: #5b6b73;
+      --navy: #123047;
+      --navy-deep: #0b1f2e;
+      --gold: #c4a15a;
+      --gold-soft: #e8d7a8;
+      --paper: #fffdf8;
+      --canvas: #efe8d9;
+      --line: #e4d8c4;
+      --card: #ffffff;
+      --alert-bg: #fff6e8;
+      --alert-border: #d4a017;
+      --alert-ink: #6a4b12;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, rgba(18, 48, 71, 0.08), transparent 50%),
+        var(--canvas);
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    a { color: #1d5a7a; }
+    a:hover { color: var(--navy); }
+
+    .masthead {
+      background: linear-gradient(165deg, var(--navy-deep) 0%, var(--navy) 55%, #1a4a63 100%);
+      color: #f7f1e4;
+      padding: 2.4rem 1.25rem 2.1rem;
+      border-bottom: 4px solid var(--gold);
+    }
+
+    .masthead-inner,
+    .wrap,
+    .site-footer .footer-inner {
+      width: min(860px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .brand-row {
+      display: flex;
+      align-items: center;
+      gap: 0.9rem;
+      margin-bottom: 1.35rem;
+    }
+
+    .emblem {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      color: var(--gold-soft);
+    }
+
+    .brand-kicker {
+      margin: 0;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--gold-soft);
+      font-weight: 700;
+    }
+
+    .brand-sub {
+      margin: 0.15rem 0 0;
+      font-size: 0.88rem;
+      color: rgba(247, 241, 228, 0.78);
+    }
+
+    .masthead h1 {
+      margin: 0 0 0.45rem;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 2.55rem);
+      font-weight: 650;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .updated {
+      display: inline-block;
+      margin: 0;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid rgba(196, 161, 90, 0.45);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: var(--gold-soft);
+    }
+
+    .wrap { padding: 1.75rem 0 3.5rem; }
+
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.1rem 1.2rem 1.2rem;
+      margin: 0 0 1.5rem;
+      box-shadow: 0 8px 24px rgba(18, 48, 71, 0.06);
+    }
+
+    .toc h2 {
+      margin: 0 0 0.7rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-family: "Source Sans 3", sans-serif;
+      font-weight: 700;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.35rem 1rem;
+    }
+
+    .toc a {
+      text-decoration: none;
+      color: var(--navy);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .toc a:hover { text-decoration: underline; color: #1d5a7a; }
+
+    .doc {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: clamp(1.3rem, 3vw, 2.2rem);
+      box-shadow: 0 12px 40px rgba(18, 48, 71, 0.07);
+    }
+
+    .doc > p:first-of-type {
+      font-size: 1.08rem;
+      color: #314047;
+    }
+
+    .doc h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 650;
+      color: var(--navy-deep);
+      margin: 2rem 0 0.7rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .doc h2:first-child { margin-top: 0; }
+
+    .doc h3 {
+      font-size: 1.08rem;
+      margin: 1.2rem 0 0.4rem;
+      color: var(--navy);
+    }
+
+    .doc p, .doc li { color: #243038; }
+
+    .doc ul { padding-left: 1.2rem; }
+    .doc li { margin: 0.35rem 0; }
+
+    .location-callout {
+      background: var(--alert-bg);
+      border: 1px solid #efd7a2;
+      border-left: 5px solid var(--alert-border);
+      border-radius: 12px;
+      padding: 1rem 1.15rem 1.15rem;
+      margin: 1rem 0 1.4rem;
+    }
+
+    .location-callout > p:first-child { margin-top: 0; }
+    .location-callout > *:last-child { margin-bottom: 0; }
+    .location-callout h3 { color: var(--alert-ink); margin-top: 0.9rem; }
+
+    .contact-box {
+      background: #f3f7f8;
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
+      margin-top: 0.6rem;
+    }
+
+    .site-footer {
+      background: var(--navy-deep);
+      color: rgba(247, 241, 228, 0.78);
+      padding: 1.4rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .site-footer strong { color: var(--gold-soft); font-weight: 600; }
+
+    @media (max-width: 640px) {
+      .brand-row { align-items: flex-start; }
+      .doc { border-radius: 14px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .masthead { border-bottom-width: 2px; }
+      .toc, .site-footer { display: none; }
+      .doc, .location-callout { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <div class="brand-row">
+        <svg class="emblem" viewBox="0 0 48 48" aria-hidden="true">
+          <circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M24 8 L36 14 V24 C36 32 24 38 24 38 C24 38 12 32 12 24 V14 Z" fill="none" stroke="currentColor" stroke-width="1.6"/>
+          <path d="M24 16 V30 M18 22 H30" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+        </svg>
+        <div>
+          <p class="brand-kicker">Ministerio Público de Guatemala</p>
+          <p class="brand-sub">Departamento Informático Fiscal y Técnico</p>
+        </div>
+      </div>
+      <h1>{{ page.heading | default: page.title }}</h1>
+      {% if page.updated %}
+      <p class="updated">Última actualización: {{ page.updated }}</p>
+      {% endif %}
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="toc" aria-label="Contenido">
+      <h2>En esta página</h2>
+      <ol>
+        <li><a href="#informacion-recopilada">Información recopilada</a></li>
+        <li><a href="#uso-de-informacion">Uso de información</a></li>
+        <li><a href="#ubicacion">Datos de ubicación</a></li>
+        <li><a href="#proteccion">Protección de la información</a></li>
+        <li><a href="#derechos">Derechos del usuario</a></li>
+        <li><a href="#cambios">Cambios en la política</a></li>
+        <li><a href="#terminos">Términos y condiciones</a></li>
+        <li><a href="#contacto">Contáctenos</a></li>
+      </ol>
+    </nav>
+
+    <article class="doc">
+      {{ content }}
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Ministerio Público de Guatemala</strong> · Fiscalía Virtual · Documento informativo de privacidad y condiciones de uso.
+    </div>
+  </footer>
+</body>
+</html>
