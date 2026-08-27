@@ -10,19 +10,28 @@
   <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <style>
     :root {
-      --ink: #15232b;
+      --navy: #002144;
+      --gold: #AE8800;
+      --gold-50: #FEFBF2;
+      --gold-100: #FDF7E6;
+      --gold-200: #FBEFCC;
+      --gold-300: #F7F1D9;
+      --gold-400: #F1E5B3;
+      --gold-500: #D7C480;
+      --gold-600: #E0CF66;
+      --gold-700: #D3BE4D;
+      --gold-800: #C5AC33;
+      --gold-900: #B79A1A;
+      --ink: #002144;
       --muted: #5b6b73;
-      --navy: #123047;
-      --navy-deep: #0b1f2e;
-      --gold: #c4a15a;
-      --gold-soft: #e8d7a8;
-      --paper: #fffdf8;
-      --canvas: #efe8d9;
-      --line: #e4d8c4;
+      --gold-soft: var(--gold-400);
+      --paper: var(--gold-50);
+      --canvas: var(--gold-100);
+      --line: var(--gold-200);
       --card: #ffffff;
-      --alert-bg: #fff6e8;
-      --alert-border: #d4a017;
-      --alert-ink: #6a4b12;
+      --alert-bg: var(--gold-100);
+      --alert-border: var(--gold);
+      --alert-ink: var(--gold);
     }
 
     * { box-sizing: border-box; }
@@ -33,19 +42,19 @@
       margin: 0;
       color: var(--ink);
       background:
-        radial-gradient(1200px 500px at 10% -10%, rgba(18, 48, 71, 0.08), transparent 50%),
+        radial-gradient(1200px 500px at 10% -10%, rgba(0, 33, 68, 0.08), transparent 50%),
         var(--canvas);
       font-family: "Source Sans 3", "Segoe UI", sans-serif;
       font-size: 1.05rem;
       line-height: 1.7;
     }
 
-    a { color: #1d5a7a; }
-    a:hover { color: var(--navy); }
+    a { color: var(--navy); }
+    a:hover { color: var(--gold); }
 
     .masthead {
-      background: linear-gradient(165deg, var(--navy-deep) 0%, var(--navy) 55%, #1a4a63 100%);
-      color: #f7f1e4;
+      background: var(--navy);
+      color: var(--gold-50);
       padding: 2.4rem 1.25rem 2.1rem;
       border-bottom: 4px solid var(--gold);
     }
@@ -59,31 +68,24 @@
 
     .brand-row {
       display: flex;
-      align-items: center;
-      gap: 0.9rem;
-      margin-bottom: 1.35rem;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.7rem;
+      margin-bottom: 1.5rem;
     }
 
     .emblem {
-      width: 48px;
-      height: 48px;
-      flex-shrink: 0;
-      color: var(--gold-soft);
-    }
-
-    .brand-kicker {
-      margin: 0;
-      font-size: 0.72rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--gold-soft);
-      font-weight: 700;
+      display: block;
+      height: clamp(104px, 22vw, 152px);
+      width: auto;
+      max-width: min(280px, 100%);
+      object-fit: contain;
     }
 
     .brand-sub {
-      margin: 0.15rem 0 0;
+      margin: 0;
       font-size: 0.88rem;
-      color: rgba(247, 241, 228, 0.78);
+      color: var(--gold-400);
     }
 
     .masthead h1 {
@@ -99,7 +101,7 @@
       display: inline-block;
       margin: 0;
       padding: 0.2rem 0.7rem;
-      border: 1px solid rgba(196, 161, 90, 0.45);
+      border: 1px solid var(--gold-700);
       border-radius: 999px;
       font-size: 0.85rem;
       color: var(--gold-soft);
@@ -113,7 +115,7 @@
       border-radius: 16px;
       padding: 1.1rem 1.2rem 1.2rem;
       margin: 0 0 1.5rem;
-      box-shadow: 0 8px 24px rgba(18, 48, 71, 0.06);
+      box-shadow: 0 8px 24px rgba(0, 33, 68, 0.06);
     }
 
     .toc h2 {
@@ -142,14 +144,14 @@
       font-size: 0.95rem;
     }
 
-    .toc a:hover { text-decoration: underline; color: #1d5a7a; }
+    .toc a:hover { text-decoration: underline; color: var(--gold); }
 
     .doc {
       background: var(--paper);
       border: 1px solid var(--line);
       border-radius: 18px;
       padding: clamp(1.3rem, 3vw, 2.2rem);
-      box-shadow: 0 12px 40px rgba(18, 48, 71, 0.07);
+      box-shadow: 0 12px 40px rgba(0, 33, 68, 0.07);
     }
 
     .doc > p:first-of-type {
@@ -161,7 +163,7 @@
       font-family: Fraunces, Georgia, serif;
       font-size: 1.45rem;
       font-weight: 650;
-      color: var(--navy-deep);
+      color: var(--navy);
       margin: 2rem 0 0.7rem;
       padding-bottom: 0.4rem;
       border-bottom: 1px solid var(--line);
@@ -182,7 +184,7 @@
 
     .location-callout {
       background: var(--alert-bg);
-      border: 1px solid #efd7a2;
+      border: 1px solid var(--gold-400);
       border-left: 5px solid var(--alert-border);
       border-radius: 12px;
       padding: 1rem 1.15rem 1.15rem;
@@ -194,15 +196,15 @@
     .location-callout h3 { color: var(--alert-ink); margin-top: 0.9rem; }
 
     .contact-box {
-      background: #f3f7f8;
+      background: var(--gold-50);
       border-radius: 12px;
       padding: 1rem 1.15rem;
       margin-top: 0.6rem;
     }
 
     .site-footer {
-      background: var(--navy-deep);
-      color: rgba(247, 241, 228, 0.78);
+      background: var(--navy);
+      color: var(--gold-400);
       padding: 1.4rem 1rem;
       font-size: 0.9rem;
     }
@@ -210,7 +212,6 @@
     .site-footer strong { color: var(--gold-soft); font-weight: 600; }
 
     @media (max-width: 640px) {
-      .brand-row { align-items: flex-start; }
       .doc { border-radius: 14px; }
     }
 
@@ -226,15 +227,8 @@
   <header class="masthead">
     <div class="masthead-inner">
       <div class="brand-row">
-        <svg class="emblem" viewBox="0 0 48 48" aria-hidden="true">
-          <circle cx="24" cy="24" r="22" fill="none" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M24 8 L36 14 V24 C36 32 24 38 24 38 C24 38 12 32 12 24 V14 Z" fill="none" stroke="currentColor" stroke-width="1.6"/>
-          <path d="M24 16 V30 M18 22 H30" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
-        </svg>
-        <div>
-          <p class="brand-kicker">Ministerio Público de Guatemala</p>
-          <p class="brand-sub">Departamento Informático Fiscal y Técnico</p>
-        </div>
+        <img class="emblem" src="{{ '/assets/mp_logo_silver_nobg.png' | relative_url }}" alt="Ministerio Público de Guatemala">
+        <p class="brand-sub">Departamento Informático Fiscal y Técnico</p>
       </div>
       <h1>{{ page.heading | default: page.title }}</h1>
       {% if page.updated %}
