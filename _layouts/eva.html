@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ page.title | default: "Política de Privacidad" }}</title>
+  <meta name="description" content="{{ page.description | default: 'Política de privacidad y términos de uso.' }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,650&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #01BCC0;
+      --secondary: #FD5A98;
+      --coral: #FE8367;
+      --accent-purple: #A693FC;
+      --accent-green: #80D268;
+      --accent-blue: #78A3FE;
+      --surface-blush: #FDE9F2;
+      --ink: #01567B;
+      --muted: #5b6b73;
+      --paper: #ffffff;
+      --canvas: var(--surface-blush);
+      --line: #f4c5d8;
+      --card: #ffffff;
+      --alert-bg: var(--surface-blush);
+      --alert-border: var(--coral);
+      --alert-ink: var(--secondary);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      color: var(--ink);
+      background:
+        radial-gradient(1200px 500px at 10% -10%, rgba(1, 188, 192, 0.14), transparent 50%),
+        var(--canvas);
+      font-family: "Source Sans 3", "Segoe UI", sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.7;
+    }
+
+    a { color: var(--primary); }
+    a:hover { color: var(--secondary); }
+
+    .masthead {
+      background: var(--primary);
+      color: #ffffff;
+      padding: 2.4rem 1.25rem 2.1rem;
+      border-bottom: 4px solid var(--secondary);
+    }
+
+    .masthead-inner,
+    .wrap,
+    .site-footer .footer-inner {
+      width: min(860px, calc(100% - 2rem));
+      margin: 0 auto;
+    }
+
+    .masthead h1 {
+      margin: 0 0 0.45rem;
+      font-family: Fraunces, Georgia, serif;
+      font-size: clamp(1.8rem, 4vw, 2.55rem);
+      font-weight: 650;
+      line-height: 1.15;
+      letter-spacing: -0.02em;
+    }
+
+    .updated {
+      display: inline-block;
+      margin: 0;
+      padding: 0.2rem 0.7rem;
+      border: 1px solid rgba(255, 255, 255, 0.65);
+      border-radius: 999px;
+      font-size: 0.85rem;
+      color: #ffffff;
+    }
+
+    .wrap { padding: 1.75rem 0 3.5rem; }
+
+    .toc {
+      background: var(--card);
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 1.1rem 1.2rem 1.2rem;
+      margin: 0 0 1.5rem;
+      box-shadow: 0 8px 24px rgba(1, 86, 123, 0.06);
+    }
+
+    .toc h2 {
+      margin: 0 0 0.7rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-family: "Source Sans 3", sans-serif;
+      font-weight: 700;
+    }
+
+    .toc ol {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 0.35rem 1rem;
+    }
+
+    .toc a {
+      text-decoration: none;
+      color: var(--ink);
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+
+    .toc a:hover { text-decoration: underline; color: var(--secondary); }
+
+    .doc {
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      padding: clamp(1.3rem, 3vw, 2.2rem);
+      box-shadow: 0 12px 40px rgba(1, 86, 123, 0.07);
+    }
+
+    .doc > p:first-of-type {
+      font-size: 1.08rem;
+      color: var(--ink);
+    }
+
+    .doc h2 {
+      font-family: Fraunces, Georgia, serif;
+      font-size: 1.45rem;
+      font-weight: 650;
+      color: var(--ink);
+      margin: 2rem 0 0.7rem;
+      padding-bottom: 0.4rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .doc h2:first-child { margin-top: 0; }
+
+    .doc h3 {
+      font-size: 1.08rem;
+      margin: 1.2rem 0 0.4rem;
+      color: var(--ink);
+    }
+
+    .doc p, .doc li { color: #243038; }
+
+    .doc ul { padding-left: 1.2rem; }
+    .doc li { margin: 0.35rem 0; }
+
+    .location-callout {
+      background: var(--alert-bg);
+      border: 1px solid #f7c3d4;
+      border-left: 5px solid var(--alert-border);
+      border-radius: 12px;
+      padding: 1rem 1.15rem 1.15rem;
+      margin: 1rem 0 1.4rem;
+    }
+
+    .location-callout > p:first-child { margin-top: 0; }
+    .location-callout > *:last-child { margin-bottom: 0; }
+    .location-callout h3 { color: var(--alert-ink); margin-top: 0.9rem; }
+
+    .contact-box {
+      background: var(--surface-blush);
+      border-radius: 12px;
+      padding: 1rem 1.15rem;
+      margin-top: 0.6rem;
+    }
+
+    .site-footer {
+      background: var(--ink);
+      color: #cfe8ee;
+      padding: 1.4rem 1rem;
+      font-size: 0.9rem;
+    }
+
+    .site-footer strong { color: var(--primary); font-weight: 600; }
+
+    @media (max-width: 640px) {
+      .doc { border-radius: 14px; }
+    }
+
+    @media print {
+      body { background: #fff; }
+      .masthead { border-bottom-width: 2px; }
+      .toc, .site-footer { display: none; }
+      .doc, .location-callout { box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="masthead">
+    <div class="masthead-inner">
+      <h1>{{ page.heading | default: page.title }}</h1>
+      {% if page.updated %}
+      <p class="updated">Última actualización: {{ page.updated }}</p>
+      {% endif %}
+    </div>
+  </header>
+
+  <main class="wrap">
+    <nav class="toc" aria-label="Contenido">
+      <h2>En esta página</h2>
+      <ol>
+        <li><a href="#informacion-recopilada">Información recopilada</a></li>
+        <li><a href="#uso-de-informacion">Uso de información</a></li>
+        <li><a href="#ubicacion">Datos de ubicación</a></li>
+        <li><a href="#proteccion">Protección de la información</a></li>
+        <li><a href="#derechos">Derechos del usuario</a></li>
+        <li><a href="#cambios">Cambios en la política</a></li>
+        <li><a href="#terminos">Términos y condiciones</a></li>
+        <li><a href="#contacto">Contáctenos</a></li>
+      </ol>
+    </nav>
+
+    <article class="doc">
+      {{ content }}
+    </article>
+  </main>
+
+  <footer class="site-footer">
+    <div class="footer-inner">
+      <strong>Ministerio Público de Guatemala</strong> · EVA · Documento informativo de privacidad y condiciones de uso.
+    </div>
+  </footer>
+</body>
+</html>
